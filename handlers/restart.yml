@@ -1,0 +1,7 @@
+---
+# restart SSH
+
+- name: Restart SSH
+  ansible.builtin.sysvinit:
+    name: ssh
+    state: restarted

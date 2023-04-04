@@ -1,0 +1,16 @@
+---
+# tasks file for common
+
+- name: "Create facts directory"
+  ansible.builtin.file:
+    dest: "{{ ansible_path }}/facts.d"
+    state: directory
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Configurate ssh
+  ansible.builtin.include_tasks: configurate_ssh.yml
+
+- name: Install packages
+  ansible.builtin.include_tasks: install_packages.yml

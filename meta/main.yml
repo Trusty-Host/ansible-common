@@ -1,0 +1,15 @@
+dependencies: []
+
+galaxy_info:
+  author: Deff
+  role_name: common
+  namespace: deff
+  description: Setup base settings/package
+  company: Trusty
+  license: license (MIT)
+  min_ansible_version: 2.14.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+        - bionic

@@ -1,0 +1,5 @@
+---
+# handlers file for common
+
+- name: Include restart handler
+  ansible.builtin.import_tasks: handlers/restart.yml

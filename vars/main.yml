@@ -1,0 +1,5 @@
+---
+# vars file for common
+
+ansible_path: "/etc/ansible"
+ssh_path: "/etc/ssh"

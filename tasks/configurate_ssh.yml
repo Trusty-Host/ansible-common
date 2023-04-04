@@ -1,0 +1,17 @@
+---
+# configurate ssh
+
+- name: Set Auth method
+  notify: Restart SSH
+  block:
+    - name: Set  PasswordAuthentication
+      ansible.builtin.lineinfile:
+        path: "{{ ssh_path }}/sshd_config"
+        regexp: "^PasswordAuthentication"
+        line: "PasswordAuthentication {{ ssh_pasword_auth }}"
+
+    - name: Set  PubkeyAuthentication
+      ansible.builtin.lineinfile:
+        path: "{{ ssh_path }}/sshd_config"
+        regexp: "^#PubkeyAuthentication"
+        line: "PubkeyAuthentication {{ ssh_pasword_auth_pubkey }}"

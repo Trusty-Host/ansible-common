@@ -1,0 +1,8 @@
+---
+# Install default packages
+
+- name: Install pip
+  ansible.builtin.apt:
+    name: pip
+    state: present
+    update_cache: true

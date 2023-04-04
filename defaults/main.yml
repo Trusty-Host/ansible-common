@@ -1,0 +1,5 @@
+---
+# defaults file for common
+
+ssh_pasword_auth: "no"
+ssh_pasword_auth_pubkey: "yes"
