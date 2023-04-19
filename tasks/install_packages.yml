@@ -6,3 +6,9 @@
     name: pip
     state: present
     update_cache: true
+
+- name: Install cpufrequtils
+  ansible.builtin.apt:
+    name: cpufrequtils
+    state: present
+    update_cache: true

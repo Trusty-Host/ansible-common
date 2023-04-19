@@ -3,3 +3,6 @@
 
 - name: Include restart handler
   ansible.builtin.import_tasks: handlers/restart.yml
+
+- name: Include disable handler
+  ansible.builtin.import_tasks: handlers/disable.yml

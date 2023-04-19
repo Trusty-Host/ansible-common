@@ -1,0 +1,7 @@
+---
+# restart ondemand
+
+- name: Disable ondemand
+  ansible.builtin.sysvinit:
+    name: ondemand
+    enabled: false

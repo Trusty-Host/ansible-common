@@ -1,0 +1,10 @@
+---
+# configurate turboboost
+
+- name: Set  GOVERNOR
+  ansible.builtin.copy:
+    dest: "/etc/default/cpufrequtils"
+    content: "GOVERNOR=\"performance\""
+    force: true
+    mode: "0644"
+  notify: Disable ondemand

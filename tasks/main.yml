@@ -14,3 +14,6 @@
 
 - name: Install packages
   ansible.builtin.include_tasks: install_packages.yml
+
+- name: Configurate turboboost
+  ansible.builtin.include_tasks: configurate_turboboost.yml
