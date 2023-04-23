@@ -15,3 +15,8 @@
         path: "{{ ssh_path }}/sshd_config"
         regexp: "^#PubkeyAuthentication"
         line: "PubkeyAuthentication {{ ssh_pasword_auth_pubkey }}"
+
+- name: Add OpenSSH rule
+  community.general.ufw:
+    rule: allow
+    name: OpenSSH

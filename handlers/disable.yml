@@ -1,5 +1,5 @@
 ---
-# restart ondemand
+# disable ondemand
 
 - name: Disable ondemand
   ansible.builtin.sysvinit:

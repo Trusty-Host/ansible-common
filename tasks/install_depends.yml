@@ -1,0 +1,19 @@
+---
+# install depends
+
+- name: Install depends firewall package
+  ansible.builtin.apt:
+    name: "{{ for_firewall_package }}"
+    state: present
+    update_cache: true
+  loop:
+    - xtables-addons-common
+    - iptables-persistent
+  loop_control:
+    loop_var: for_firewall_package
+
+- name: Start netfilter-persistent
+  ansible.builtin.sysvinit:
+    name: netfilter-persistent
+    state: started
+    enabled: true

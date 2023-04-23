@@ -12,3 +12,10 @@
     name: cpufrequtils
     state: present
     update_cache: true
+
+- name: Install ufw
+  ansible.builtin.apt:
+    name: ufw
+    state: present
+    update_cache: true
+  notify: Start ufw
