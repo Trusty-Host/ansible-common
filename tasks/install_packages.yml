@@ -13,9 +13,14 @@
     state: present
     update_cache: true
 
-- name: Install ufw
-  ansible.builtin.apt:
-    name: ufw
-    state: present
-    update_cache: true
-  notify: Start ufw
+
+- name: Install and start ufw
+  block:
+  - name: Install ufw
+    ansible.builtin.apt:
+      name: ufw
+      state: present
+      update_cache: true
+  - name: Enable ufw
+    community.general.ufw:
+      state: enabled
