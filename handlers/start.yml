@@ -1,8 +1,0 @@
----
-# Start ufw
-
-- name: Start ufw
-  ansible.builtin.sysvinit:
-    name: ufw
-    state: started
-    enabled: true
