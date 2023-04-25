@@ -2,6 +2,7 @@
 # disable ondemand
 
 - name: Disable ondemand
-  ansible.builtin.sysvinit:
+  ansible.builtin.systemd:
     name: ondemand
     enabled: false
+    state: stopped
