@@ -9,6 +9,7 @@
   loop:
     - xtables-addons-common
     - iptables-persistent
+    - libtext-csv-xs-perl
   loop_control:
     loop_var: for_firewall_package
 
