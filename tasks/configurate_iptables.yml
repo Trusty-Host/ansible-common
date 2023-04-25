@@ -1,0 +1,23 @@
+---
+# configurate iptables
+
+- name: Settings geoip
+  block:
+    - name: Create directory for geoip
+      ansible.builtin.file:
+        dest: "/usr/share/xt_geoip"
+        state: directory
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Download database
+      ansible.builtin.command: "/usr/lib/xtables-addons/xt_geoip_dl"
+
+    - name: Set rights to execute file
+      ansible.builtin.file:
+        path: /usr/lib/xtables-addons/xt_geoip_build
+        mode: u+rwx
+
+    - name: Generate geo files
+      ansible.builtin.command: "/usr/lib/xtables-addons/xt_geoip_build -D /usr/share/xt_geoip *.csv"
